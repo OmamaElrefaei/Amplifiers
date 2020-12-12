@@ -14,7 +14,7 @@ Vin 2 0 sin(0 1 10MEG 0)
 * Subcircuit
 .SUBCKT opamp 1 	2   	3
 * Connection: | 	|  		|
-*   		o/p 	    |  		|
+*   	    	o/p 	|  		|
 * 			    	+ve i/p	  |
 *							    -ve i/p
 * VCCS gain:
