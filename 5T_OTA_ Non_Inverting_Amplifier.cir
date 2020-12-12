@@ -1,0 +1,53 @@
+5T OTA Non Inverting Amplifier:
+
+* Created on 18 August 2020
+* @author: Omama Elrefaei
+
+** Circuit Description **
+
+* Power Supply:
+VDD	1 0 1V
+
+* Signal Source:
+VIN	2  0  AC 1
+IB	5  0  DC  20uA
+
+* Circuit Components:
+CL	out 0	2e-12F
+R 	3 	0   2.52776MEG
+Rf 	3 	out 7.58MEG
+Rss	5 	0 	950K
+
+* OTA:
+M1	4     2   5   5	NMOS	L= 0.4um 	W= 2.887um
+M2	out   3   5   5	NMOS 	L= 0.4um 	W= 2.887um
+M3	4     4   1   1	PMOS	L= 1um	    W= 10um
+M4	out   4   1   1	PMOS	L= 1um		W= 10um
+
+** MOSFET Model **
+.INCLUDE '\180nm_bsim3.txt'
+
+** Analysis Requests **
+.OP
+*.TF V(out) VIN
+.AC DEC 100 10 1G
+
+.END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

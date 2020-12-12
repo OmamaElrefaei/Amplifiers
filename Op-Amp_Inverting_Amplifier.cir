@@ -1,0 +1,35 @@
+Inverting Amplifier:
+
+* Created on 12 July 2020
+* @author: Omama Elrefaei
+
+* Accessing subcircuit:
+Xopamp 1 0 2 opamp
+* Signal source:
+Vin 3 0 AC 1
+* Circuit componants:
+Rin 3 2 1K
+Rf  2 1 10K
+* Analysis request:
+*.TF V(1) Vin
+.AC DEC 100 1 100MEG
+* Subcircuit
+.SUBCKT opamp 1 	2   	3
+* Connection: | 	|  		|
+*   		o/p 	|  		|
+* 			    	+ve i/p	|
+*							-ve i/p
+* VCCS gain:
+Ginput 0 4 2 3 10
+* VCVS gain:
+Eoutput 1 0 4 0 1
+* Redundant connection:
+Iopen1 2 0 0A
+Iopen2 3 0 0A
+* Circuit componants:
+R1 4 0 10K
+C1 4 0 15.915n
+.ENDS opamp
+.PROBE
+.OP
+.END

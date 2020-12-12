@@ -1,0 +1,33 @@
+Unity Gain Buffer:
+
+* Created on 12 July 2020
+* @author: Omama Elrefaei
+
+* Accessing subcircuit:
+Xopamp 1 2 1 opamp
+* Signal source:
+*Vin 2 0 AC 1
+Vin 2 0 sin(0 1 10MEG 0)
+* Analysis request:
+.TRAN 10n 200n
+*.AC DEC 100 100 1G
+* Subcircuit
+.SUBCKT opamp 1 	2   	3
+* Connection: | 	|  		|
+*   		o/p 	|  		|
+* 			    	+ve i/p	|
+*							-ve i/p
+* VCCS gain:
+Egain 4 0 2 3 10K
+* VCVS gain:
+Ebuffer 1 0 5 0 1
+* Redundant connection:
+Iopen1 2 0 0A
+Iopen2 3 0 0A
+* Circuit componants:
+R1 4 5 10K
+C1 5 0 15.915n
+.ENDS opamp
+.PROBE
+.OP
+.END

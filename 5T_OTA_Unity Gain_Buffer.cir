@@ -1,0 +1,48 @@
+5T OTA Unity Gain Buffer:
+
+* Created on 26 July 2020
+* @author: Omama Elrefaei
+
+** Circuit Description **
+
+* Power Supply:
+VDD	1 0 1V
+
+* Signal Source:
+VIN	2   0  DC   0.76 AC  1
+IB	5   0  DC	100uA
+* For analysis stability
+Vt inv out DC   0
+
+* Circuit Components:
+CL	out 0	5e-12F
+Rss	  5 0 	190k
+
+* OTA:
+M1	4     2   5   5	NMOS	L= 0.4um 	W= 14.43um
+M2	out   inv 5   5	NMOS 	L= 0.4um 	W= 14.43um
+M3	4     4   1   1	PMOS	L= 1um	    W= 50um
+M4	out   4   1   1	PMOS	L= 1um		W= 50um
+
+** MOSFET Model **
+.INCLUDE '\180nm_bsim3.txt'
+
+** Analysis Requests **
+.OP
+.AC DEC 100 10 100MEG
+*.DC VIN 0 0.76 0.2
+*.STEP VIN 0V 1V .2V
+
+.END
+
+
+
+
+
+
+
+
+
+
+
+
