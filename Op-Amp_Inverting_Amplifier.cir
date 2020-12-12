@@ -16,9 +16,9 @@ Rf  2 1 10K
 * Subcircuit
 .SUBCKT opamp 1 	2   	3
 * Connection: | 	|  		|
-*   		o/p 	|  		|
-* 			    	+ve i/p	|
-*							-ve i/p
+*   		    o/p 	|  		|
+* 			    	+ve i/p	  |
+*						    	-ve i/p
 * VCCS gain:
 Ginput 0 4 2 3 10
 * VCVS gain:
