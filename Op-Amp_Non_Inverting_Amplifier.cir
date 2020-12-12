@@ -19,7 +19,7 @@ Rf 3 1 9K
 * Subcircuit
 .SUBCKT opamp 1 	2   	3
 * Connection: | 	|  		|
-*   		o/p 	    |  		|
+*   		    o/p 	|  		|
 * 			    	+ve i/p	  |
 *							    -ve i/p
 * VCVS gain:
